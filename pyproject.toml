@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "flask-test-project"
+version = "0.1.0"
+description = ""
+authors = ["Rubsun <mnudga79@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.1.0"
+flask-wtf = "^1.2.2"
+flask-sqlalchemy = "^3.1.1"
+asyncpg = "^0.30.0"
+pydantic-settings = "^2.7.1"
+flask-migrate = "^4.0.7"
+celery = "^5.4.0"
+psycopg2-binary = "^2.9.10"
+flask-login = "^0.6.3"
+psycopg = "^3.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
