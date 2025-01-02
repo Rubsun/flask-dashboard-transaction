@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from app import setup_app
 from config.settings import settings
 from src.db.models.meta import Base
+from views.dashboard import dashboard
 
 db = SQLAlchemy(model_class=Base)
 migrate = Migrate()
@@ -22,15 +23,11 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
 
-    # with app.app_context():
-    #     from .routes import dashboard, users, transactions
-    #
-    #     app.register_blueprint(dashboard.bp)
-    #     app.register_blueprint(users.bp)
-    #     app.register_blueprint(transactions.bp)
+    with app.app_context():
+
+        app.register_blueprint(dashboard)
 
     return app
 
 
 celery.conf.update({"result_backend": settings.redis_url})
-

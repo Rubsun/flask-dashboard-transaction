@@ -13,7 +13,11 @@ def create_admin():
             click.echo("Администратор уже существует.")
             return
 
-        admin = User(role='admin')
+        admin = User()
+        admin.username = "admin"
+        admin.role = "admin"
+        admin.set_password("admin")
+
         db.session.add(admin)
         db.session.commit()
 

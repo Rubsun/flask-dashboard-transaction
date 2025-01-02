@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}Главная{% endblock %}
+    </title>
+</head>
+<body>
+{% block nav %}
+    <header class="header">
+        <div class="nav-left">
+            <a href="/">Главная</a>
+        </div>
+        <div class="nav-right">
+            {% if g.user %}
+                <span>Привет, {{ g.user.username }}!</span>
+                <a href="/logout">Выйти</a>
+            {% else %}
+                <a href="/login">Войти</a>
+                <a href="/register">Регистрация</a>
+            {% endif %}
+        </div>
+    </header>
+{% endblock %}
+{% block body %}
+{% endblock %}
+</body>
+</html>

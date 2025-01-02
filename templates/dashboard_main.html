@@ -1,0 +1,11 @@
+{% extends 'base_generic.html' %}
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block body %}
+    <h1>Количество Юзеров: {{ users_count }}</h1>
+    <h1>Количество транзакций: {{ transactions_count }}</h1>
+    <h1>Сумма транзакций за сегодняшний день: {{ transactions_amount }}</h1>
+    <h1>Последние транзакции: {{ transactions_limit }}</h1>
+{% endblock %}
